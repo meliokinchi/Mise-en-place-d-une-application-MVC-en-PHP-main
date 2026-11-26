@@ -1,0 +1,137 @@
+@charset "UTF-8";
+/* 
+  1) Variables CSS globales (les couleurs)
+  2) Surcharges Bootstrap (btn-primary, alert-primary, liens, etc.)
+  3) Styles de base + utilitaires .bg-*, .text-*, .border-*
+*/
+:root {
+  /* 1) Les variables */
+  --g-sky: #f1f8fc;
+  --g-royal: #0074c7;
+  --g-navy: #00497c;
+  --g-slate: #384050;
+  --g-crimson: #cd2c2e;
+  --g-sage: #82b864;
+  /* 2) Mappage sur Bootstrap (affecte .btn-primary, .text-primary, etc.) */
+  --bs-primary: var(--g-royal);
+  --bs-secondary: var(--g-slate);
+  --bs-success: var(--g-sage);
+  --bs-danger: var(--g-crimson);
+  --bs-info: var(--g-sky);
+  --bs-dark: var(--g-navy);
+  /* Liens Bootstrap */
+  --bs-link-color: var(--g-royal);
+  --bs-link-hover-color: rgb(0, 98.6, 169.15);
+}
+
+/* 3) Base */
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--g-sky);
+  color: var(--g-slate);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Navbar douce sur fond sky */
+.navbar {
+  border-bottom: 1px solid rgba(56, 64, 80, 0.15); /* basé sur slate */
+}
+
+.navbar-brand {
+  color: var(--g-royal);
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link.show {
+  color: var(--g-royal);
+  font-weight: 600;
+}
+
+/* Petites aides utilitaires issues de la palette */
+.bg-sky {
+  background-color: #f1f8fc !important;
+}
+
+.text-sky {
+  color: #f1f8fc !important;
+}
+
+.border-sky {
+  border-color: #f1f8fc !important;
+}
+
+.bg-royal {
+  background-color: #0074c7 !important;
+}
+
+.text-royal {
+  color: #0074c7 !important;
+}
+
+.border-royal {
+  border-color: #0074c7 !important;
+}
+
+.bg-navy {
+  background-color: #00497c !important;
+}
+
+.text-navy {
+  color: #00497c !important;
+}
+
+.border-navy {
+  border-color: #00497c !important;
+}
+
+.bg-slate {
+  background-color: #384050 !important;
+}
+
+.text-slate {
+  color: #384050 !important;
+}
+
+.border-slate {
+  border-color: #384050 !important;
+}
+
+.bg-crimson {
+  background-color: #cd2c2e !important;
+}
+
+.text-crimson {
+  color: #cd2c2e !important;
+}
+
+.border-crimson {
+  border-color: #cd2c2e !important;
+}
+
+.bg-sage {
+  background-color: #82b864 !important;
+}
+
+.text-sage {
+  color: #82b864 !important;
+}
+
+.border-sage {
+  border-color: #82b864 !important;
+}
+
+/* Bouton "marque" si on en veux un dédié (en plus de .btn-primary) */
+.btn-royal {
+  --bs-btn-bg: var(--g-royal);
+  --bs-btn-border-color: var(--g-royal);
+  --bs-btn-hover-bg: rgb(0, 104.4, 179.1);
+  --bs-btn-hover-border-color: rgb(0, 98.6, 169.15);
+  --bs-btn-active-bg: rgb(0, 98.6, 169.15);
+  --bs-btn-active-border-color: rgb(0, 92.8, 159.2);
+  color: #fff;
+}
+
+/*# sourceMappingURL=app.css.map */

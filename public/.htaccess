@@ -1,0 +1,12 @@
+# Active les jolies URLs: /trajets, /connexion, etc.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Laisse passer les fichiers/répertoires réels (assets, images…)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Envoie tout le reste vers index.php
+  RewriteRule ^ index.php [L]
+</IfModule>

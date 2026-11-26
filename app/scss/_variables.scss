@@ -1,0 +1,17 @@
+// === Palette projet ===
+$col-sky:     #f1f8fc; // fond clair
+$col-royal:   #0074c7; // primaire
+$col-navy:    #00497c; // primaire foncé
+$col-slate:   #384050; // neutre texte
+$col-crimson: #cd2c2e; // accent/danger
+$col-sage:    #82b864; // succès/validation
+
+// Map pratique pour générer des utilitaires
+$palette: (
+  "sky":     $col-sky,
+  "royal":   $col-royal,
+  "navy":    $col-navy,
+  "slate":   $col-slate,
+  "crimson": $col-crimson,
+  "sage":    $col-sage
+);

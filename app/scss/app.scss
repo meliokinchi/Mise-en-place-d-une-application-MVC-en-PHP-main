@@ -1,0 +1,67 @@
+@use "sass:color";
+@use "./variables" as *; // importe les variables dans le scope courant
+
+
+/* 
+  1) Variables CSS globales (les couleurs)
+  2) Surcharges Bootstrap (btn-primary, alert-primary, liens, etc.)
+  3) Styles de base + utilitaires .bg-*, .text-*, .border-*
+*/
+
+:root {
+  /* 1) Les variables */
+  --g-sky:     #{$col-sky};
+  --g-royal:   #{$col-royal};
+  --g-navy:    #{$col-navy};
+  --g-slate:   #{$col-slate};
+  --g-crimson: #{$col-crimson};
+  --g-sage:    #{$col-sage};
+
+  /* 2) Mappage sur Bootstrap (affecte .btn-primary, .text-primary, etc.) */
+  --bs-primary:   var(--g-royal);
+  --bs-secondary: var(--g-slate);
+  --bs-success:   var(--g-sage);
+  --bs-danger:    var(--g-crimson);
+  --bs-info:      var(--g-sky);
+  --bs-dark:      var(--g-navy);
+
+  /* Liens Bootstrap */
+  --bs-link-color:       var(--g-royal);
+  --bs-link-hover-color: #{color.scale($col-royal, $lightness: -15%)};
+}
+
+/* 3) Base */
+html, body {
+  height: 100%;
+}
+body {
+  background: var(--g-sky);
+  color: var(--g-slate);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Navbar douce sur fond sky */
+.navbar {
+  border-bottom: 1px solid rgba(56, 64, 80, 0.15); /* basé sur slate */
+}
+.navbar-brand { color: var(--g-royal); }
+.navbar .nav-link.active,
+.navbar .nav-link.show { color: var(--g-royal); font-weight: 600; }
+
+/* Petites aides utilitaires issues de la palette */
+@each $name, $hex in $palette {
+  .bg-#{$name}    { background-color: #{$hex} !important; }
+  .text-#{$name}  { color: #{$hex} !important; }
+  .border-#{$name}{ border-color: #{$hex} !important; }
+}
+
+/* Bouton "marque" si on en veux un dédié (en plus de .btn-primary) */
+.btn-royal {
+  --bs-btn-bg: var(--g-royal);
+  --bs-btn-border-color: var(--g-royal);
+  --bs-btn-hover-bg: #{color.scale($col-royal, $lightness: -10%)};
+  --bs-btn-hover-border-color: #{color.scale($col-royal, $lightness: -15%)};
+  --bs-btn-active-bg: #{color.scale($col-royal, $lightness: -15%)};
+  --bs-btn-active-border-color: #{color.scale($col-royal, $lightness: -20%)};
+  color: #fff;
+}
